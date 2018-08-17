@@ -2,6 +2,8 @@
 
 A small plugin that allows for Notification style popups on your website.
 
+## Simple Demo
+[DEMO](https://mathih13.github.io/NotificationQueue/)
 
 ## Installation
 To install the plugin simply download notifyQueue.js and standard.css, and refer to notifyQueue.js in your project.
