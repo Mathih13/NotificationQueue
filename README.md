@@ -25,6 +25,7 @@ By default, only some default styling is applied to the notification boxes. If y
 ```javascript
 let queue = new NotifyQueue({ materialUI: true });
 ```
+*Note: In some cases, this could apply materialize CSS to your entire page. If you are in doubt, do not apply this option.*
 
 ### Creating Notifications
 Once the queue is set up it is possible to add notifications to it. A notification is created by calling NotifyQueue's function *notify*, and supplying options in its parameter object.
