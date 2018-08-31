@@ -1,0 +1,34 @@
+﻿<html>
+    <head>
+    <body>
+        <div style="margin: 5%">
+            <button class="btn" onclick="StartWithMaterialize()"> Load the Notification Queue with Materialize CSS </button>
+            <button class="btn" onclick="StartNormally()"> Load the Notification Queue with no external styling </button>
+            <div style="margin: 5%">
+                    <p >Generate a standard notification that stays on 
+                        the screen untill removed</p>
+                    <button class="btn" onclick="OnStandardSnackbar()"> Generate </button>
+            </div>
+            <div style="margin: 5%">
+                    <p >Generate a notification with custom styles.</p>
+                    <button class="btn" onclick="OnCustomSnackbar()"> Generate </button>
+            </div>
+            <div style="margin: 5%">
+                    <p >Generate a notification that stays on screen untill closed, or a certain time has passed</p>
+                    <button class="btn" onclick="OnDurationSnackbar()"> Generate </button>
+            </div>
+            <div style="margin: 5%">
+                    <p >Generate notification that executes additional logic when the action button is pressed</p>
+                    <button class="btn" onclick="OnActionSnackbar()"> Generate </button>
+            </div>
+            <div style="margin: 5%">
+                    <p >Generate several timed notifications that show in a queue.</p>
+                    <button class="btn" onclick="OnManyDuration()"> Generate </button>
+            </div>
+            
+        </div>
+    </body>
+    <script src="notifyQueue.js"></script>
+    <script src="index.js"></script>
+       
+</html>
