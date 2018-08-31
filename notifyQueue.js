@@ -7,9 +7,12 @@ appendCss('standard.css');
 
 const styleDefaults = {
     opacity: 1,
-    iconSize: '35px',
+    boxShadow: '0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2)',
+    borderRadius: '0px',
+    iconColor: '#fff',
     backgroundColor: '#444',
     buttonBackgroundColor: 'inherit',
+    textColor: '#fff',
 }
 
 const Snack = function (args) {
@@ -41,24 +44,27 @@ const Snack = function (args) {
     Snack.prototype.show = function (done) {
         const t = this;
         this.paperSnackbar.className = 'paper-snackbar';
-        this.paperSnackbar.style.backgroundColor = args.style.backgroundColor;
+        this.paperSnackbar.style.backgroundColor = args.style.backgroundColor ? args.style.backgroundColor : styleDefaults.backgroundColor;
+        this.paperSnackbar.style.borderRadius = args.style.borderRadius ? args.style.borderRadius : styleDefaults.borderRadius;
+        this.paperSnackbar.style.boxShadow = args.style.boxShadow ? args.style.boxShadow : styleDefaults.boxShadow;
 
         const infoIcon = document.createElement('i');
-        infoIcon.className = 'large material-icons';
+        infoIcon.className = 'medium material-icons';
         infoIcon.innerHTML = 'info_outline';
-        infoIcon.style.fontSize = args.style.iconSize;
+        infoIcon.style.color = args.style.iconColor ? args.style.iconColor : styleDefaults.iconColor;
 
         const text = document.createElement('p');
         text.innerHTML = message;
         text.style.fontFamily = "Roboto,sans-serif";
         text.style.lineHeight = 'normal';
-        text.style.fontSize = args.style.fontSize;
+        text.style.fontSize = args.style.fontSize ? args.style.fontSize : styleDefaults.fontSize;
+        text.style.color = args.style.textColor ? args.style.textColor : styleDefaults.textColor;
 
         const button = document.createElement('button');
         button.className = 'action btn';
         button.innerHTML = args.actionText;
         button.style.fontFamily = "Roboto,sans-serif";
-        button.style.backgroundColor = args.style.buttonBackgroundColor;
+        button.style.backgroundColor = args.style.buttonBackgroundColor ? args.style.buttonBackgroundColor : styleDefaults.buttonBackgroundColor;
 
         this.paperSnackbar.appendChild(infoIcon);
         this.paperSnackbar.appendChild(text);
@@ -76,7 +82,7 @@ const Snack = function (args) {
 
         // In order for the animations to trigger, we have to force the original style to be computed, and then change it.
         getComputedStyle(this.paperSnackbar).bottom;
-        this.paperSnackbar.style.opacity = args.style.opacity;
+        this.paperSnackbar.style.opacity = args.style.opacity ? args.style.opacity : styleDefaults.opacity;
 
         if (duration != null) {
             setTimeout(function () {
@@ -138,6 +144,10 @@ const NotifyQueue = function (args) {
             })
     }
 
+    NotifyQueue.prototype.setDefaultStyle = function (args) {
+        Object.assign(styleDefaults, args);
+        console.log(styleDefaults);
+    };
 
 }
 
