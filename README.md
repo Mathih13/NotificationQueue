@@ -75,12 +75,13 @@ If your website is showing multiple notifications you can override the default s
 
 ```javascript
 const notifications = new NotifyQueue();
-
-notifications.setDefaultStyle({
+let myStyles= {
     backgroundColor: '#fff',
     iconColor: '#999',
     textColor: '#333'
-});
+};
+
+notifications.setDefaultStyle(myStyles);
 ```
 
 ### Queuing
