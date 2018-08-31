@@ -49,9 +49,12 @@ queue.notify(options);
 let options = {
 	style: {
 		opacity: 0.6, // The opacity of the notifications backgroundcolor
-		iconSize: '50px', // The font size of the icon on the left of the notification box
+		borderRadius: '0px', // Border radius 
+	        boxShadow: '0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2)', // Box shadow of the notification box
+		iconColor: '#fff', // Color if icon
 		backgroundColor: 'blue', // The backgroundcolor of the notification box
 		fontSize: '24px', // The font size of the main and html
+	        textColor: '#fff', // Color of the text
 		buttonBackgroundColor: 'red', // The background color of the action button		
 	},
 	actionText: 'Click me!', // The action buttons text
