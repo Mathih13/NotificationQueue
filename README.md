@@ -70,6 +70,18 @@ let options = {
 	}
 }
 ```
+### Overriding Default Styles
+If your website is showing multiple notifications you can override the default styling object of the NotifyQueue so that every subsequent notification inherits the new default style. Note that any styles that are not replaced remain default.
+
+```javascript
+const notifications = new NotifyQueue();
+
+notifications.setDefaultStyle({
+    backgroundColor: '#fff',
+    iconColor: '#999',
+    textColor: '#333'
+});
+```
 
 ### Queuing
 Automatically, NotificationQueue will queue notifications that recieve a duration. If the current number of running notifications is 3, NotificationQueue will wait for one of the currently running notifications to finish before showing the next one in line. **This does not apply to notifications without a duration. They will be shown anyway.** 
