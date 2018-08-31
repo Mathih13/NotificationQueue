@@ -27,7 +27,9 @@ const Snack = function (args) {
     Snack.prototype.dismiss = function () {
         let t = this;
         t.getElement().style.opacity = 0;
-        t.getElement().remove()
+        window.setTimeout(function () {
+            t.getElement().remove();
+        }, 500);
 
     };
 
