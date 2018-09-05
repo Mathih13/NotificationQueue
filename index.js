@@ -1,16 +1,16 @@
-﻿var queue;
+﻿var queue = new NotifyQueue();
+queue.setDefaultStyle({
+  backgroundColor: '#283593',
+  iconColor: '#fff',
+  textColor: '#fff',
+  buttonBackgroundColor: '#777'
+});
 
-function StartWithMaterialize() {
-    queue = new NotifyQueue({ materialUI: true });
-}
 
-function StartNormally() {
-    queue = new NotifyQueue();
-}
 
 function OnStandardSnackbar() {
     queue.notify({
-        message: 'This is a notification snackbar! <br> You can add HTML elements like <a href="/#">links</a> to this element.',
+        message: 'This is a notification snackbar! <br> You can add HTML elements like <a href="#">links</a> to this element.',
     });
 }
 
@@ -19,9 +19,9 @@ function OnCustomSnackbar() {
         style: {
             opacity: 0.6,
             iconSize: '50px',
-            backgroundColor: 'blue',
+            backgroundColor: 'red',
             fontSize: '24px',
-            buttonBackgroundColor: 'red',
+            buttonBackgroundColor: 'blue',
         },
         actionText: 'Thanks!',
         message: 'We saved your items!',
@@ -77,3 +77,13 @@ function OnManyDuration() {
         duration: 3000,
     });
 }
+
+setTimeout(function() {
+  let btns = document.getElementsByClassName('scale-out');
+  for (let i = 0; i <= btns.length; i++) {
+    btns[i].classList.remove("scale-out");
+    btns[i].classList.add("scale-in");
+  }
+}, 1000)
+
+
