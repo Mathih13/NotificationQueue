@@ -69,6 +69,29 @@
     }
 }
 
+
+@media (min-width: 640px) and (orientation: landscape) {
+    #snackbarContainer {
+        width: 100%;
+    }
+
+    .paper-snackbar {
+        margin: 0;
+        margin-top: 1%;
+    }
+}
+
+@media (min-width: 640px) and (orientation: portrait) {
+    #snackbarContainer {
+        width: 100%;
+    }
+
+    .paper-snackbar {
+        margin: 0;
+        margin-top: 1%;
+    }
+}
+
 @media (max-width: 640px) {
     .paper-snackbar {
         /*

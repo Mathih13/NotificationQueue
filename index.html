@@ -2,27 +2,36 @@
     <head>
         <link rel="stylesheet" href="materialize.min.css">
         <link rel="stylesheet" href="prism.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
         <style>
             .col.s6 {
                 padding: 1em;
             }
 
             .infoblock {
-                margin-bottom: 4em;
+                margin-bottom: 20%;
             }
         </style>
     </head>
     <body>
-        <nav>
-            <div class="nav-wrapper indigo darken-3 row">
-                <div class="col s1"><a href="#" class="brand-logo">NotificationQueue</a></div>
-                <ul id="nav-mobile" class="right hide-on-med-and-down col s3">
-                    <li><a href="https://github.com/Mathih13/NotificationQueue"><i class="material-icons left">info_outline</i>Source & Documentation</a></li>
-                </ul>
-            </div>
-        </nav>
+            <nav>
+                <div class="nav-wrapper indigo darken-3 row">
+                    <div class=""><a href="#" class="brand-logo center">NotificationQueue</a></div>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="left hide-on-med-and-down col s3">
+                        <li><a href="https://github.com/Mathih13/NotificationQueue"><i class="material-icons left">code</i>Source</a></li>
+                        <li><a href="https://github.com/Mathih13/NotificationQueue/blob/master/README.md"><i class="material-icons left">import_contacts</i>Documentation</a></li>
+                    </ul>
+                </div>
+            </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="https://github.com/Mathih13/NotificationQueue"><i class="material-icons left">code</i>Source</a></li>
+            <li><a href="https://github.com/Mathih13/NotificationQueue/blob/master/README.md"><i class="material-icons left">import_contacts</i>Documentation</a></li>
+        </ul>
+
         <div class="container">
-            <div class="row">
+            <div class="row hide-on-med-and-down">
                 <div class="col s12">
                    <h3 class="center-align">A small plugin for Notification style popups on your website</h3>
                     <div class="container center-align scale-transition scale-out">
@@ -95,12 +104,85 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <!--  MOBILE -->
+
+            <div class="row hide-on-large-only">
+                <div class="col s12">
+                    <h3 class="center-align infoblock">A small plugin for Notification style popups on your website</h3>
+                    <div class="container center-align scale-transition scale-out">
+                        <h4> Getting started </h4>
+                        <p>To start a notification queue simply initialize the object/class:</p>
+                        <pre><code class="language-javascript" id="standardNotifCode">const queue = new NotifyQueue();
+</code></pre>
+
+                    </div>
+                </div>
+
+
+                <div class="col s12 center-align">
+                    <div class="infoblock scale-transition scale-out">
+                        <h4>Standard Notification</h4>
+                        <p>Standard notifications are super simple to use, you only need to add a message to the function call!</p>
+                        <pre><code class="language-javascript" id="standardNotifCode">queue.notify({
+        message: 'This is a notification snackbar! <br> You can add HTML elements like <a href="#">links</a> to this element.',
+    });</code></pre>
+                        <a class="waves-effect waves-light btn blue darken-1" onclick="OnStandardSnackbar()"><i class="material-icons left">info_outline</i>Try it out</a>
+                    </div>
+
+                    <div class="infoblock scale-transition scale-out">
+                        <h4>Custom Notification</h4>
+                        <p>Custom notifications are made by changing the style and content objects of a notification. Alternatively, you may use the <code>setDefaultStyle</code> function to override all styles.</p>
+                        <pre><code class="language-javascript" id="standardNotifCode">queue.notify({
+        style: {
+            opacity: 0.6,
+            iconSize: '50px',
+            backgroundColor: 'red',
+            fontSize: '24px',
+            buttonBackgroundColor: 'blue',
+        },
+        actionText: 'Thanks!',
+        message: 'We saved your items!',
+    });</code></pre>
+                        <a class="waves-effect waves-light btn blue darken-1" onclick="OnCustomSnackbar()"><i class="material-icons left">info_outline</i>Try it out</a>
+                    </div>
+                    <div class="infoblock scale-transition scale-out">
+                        <h4>Duration Notification</h4>
+                        <p>By adding a duration value to your function call, the notification will persist for the specified duration!</p>
+                        <pre><code class="language-javascript" id="standardNotifCode">queue.notify({
+        message: 'This will stay on screen for 5 sec before destroying itself',
+        duration: 5000,
+    });</code></pre>
+                        <a class="waves-effect waves-light btn blue darken-1" onclick="OnDurationSnackbar()"><i class="material-icons left">info_outline</i>Try it out</a>
+                    </div>
+
+                    <div class="infoblock scale-transition scale-out">
+                        <h4>Custom Action Notification</h4>
+                        <p>The user action event (pressing the button) can be bound when calling the notification.</p>
+                        <pre><code class="language-javascript" id="standardNotifCode">queue.notify({
+        message: 'This snackbar has custom logic when its action button is pressed',
+        action: function () {
+            alert('Pressed the action button!')
+            this.close();
+        },
+    });</code></pre>
+                        <a class="waves-effect waves-light btn blue darken-1" onclick="OnActionSnackbar()"><i class="material-icons left">info_outline</i>Try it out</a>
+                    </div>
+
+                    <div class="infoblock scale-transition scale-out">
+                        <h4>Notification Queue</h4>
+                        <p>NotificationQueue automatically queues notifications that recieve a duration.</p>
+                        <a class="waves-effect waves-light btn blue darken-1" onclick="OnManyDuration()"><i class="material-icons left">info_outline</i>Try it out</a>
+                    </div>
+            </div>
+
         </div>
     </body>
     <script src="materialize.min.js"></script>
     <script src="prism.js"></script>
-    <script src="notifyQueue.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mathih13/NotificationQueue@1.2/notifyQueue.min.js"></script>
     <script src="index.js"></script>
-<
-       
+
 </html>

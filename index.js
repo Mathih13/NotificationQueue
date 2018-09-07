@@ -49,22 +49,7 @@ function OnActionSnackbar() {
 function OnManyDuration() {
     queue.notify({
         message: 'These snackbars are timed, and pushed to the user through a <br>queue with max concurrency of 3',
-        duration: 8000,
-    });
-
-    queue.notify({
-        message: 'These snackbars are timed, and pushed to the user through a <br>queue with max concurrency of 3',
-        duration: 7000,
-    });
-
-    queue.notify({
-        message: 'These snackbars are timed, and pushed to the user through a <br>queue with max concurrency of 3',
-        duration: 6000,
-    });
-
-    queue.notify({
-        message: 'These snackbars are timed, and pushed to the user through a <br>queue with max concurrency of 3',
-        duration: 5000,
+        duration: 3000,
     });
 
     queue.notify({
@@ -74,7 +59,22 @@ function OnManyDuration() {
 
     queue.notify({
         message: 'These snackbars are timed, and pushed to the user through a <br>queue with max concurrency of 3',
-        duration: 3000,
+        duration: 5000,
+    });
+
+    queue.notify({
+        message: 'These snackbars are timed, and pushed to the user through a <br>queue with max concurrency of 3',
+        duration: 6000,
+    });
+
+    queue.notify({
+        message: 'These snackbars are timed, and pushed to the user through a <br>queue with max concurrency of 3',
+        duration: 7000,
+    });
+
+    queue.notify({
+        message: 'These snackbars are timed, and pushed to the user through a <br>queue with max concurrency of 3',
+        duration: 8000,
     });
 }
 
@@ -86,4 +86,8 @@ setTimeout(function() {
   }
 }, 1000)
 
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems);
+});
 
