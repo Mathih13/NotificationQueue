@@ -148,7 +148,6 @@ const NotifyQueue = function (args) {
 
     NotifyQueue.prototype.setDefaultStyle = function (args) {
         Object.assign(styleDefaults, args);
-        console.log(styleDefaults);
     };
 
 }
