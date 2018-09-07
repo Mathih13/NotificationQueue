@@ -1,5 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
+﻿
 #snackbarContainer {
     display: flex;
     flex-direction: column;
@@ -17,7 +16,7 @@
 .paper-snackbar {
     transition-property: opacity, bottom, left, right, width, margin, border-radius;
     transition-duration: 0.5s;
-    transition-timing-function: ease;
+    transition-timing-function: ease-in;
     font-family: RobotoDraft;
     font-size: 14px;
     min-height: 14px;
