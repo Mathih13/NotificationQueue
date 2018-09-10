@@ -1,3 +1,4 @@
+
 # NotificationQueue
 
 A small plugin that allows for Notification style popups on your website.
@@ -13,8 +14,12 @@ To install the plugin simply download notifyQueue.js and standard.css, and refer
 ```
 Or through cdn:
 ```html
-<script src="https://cdn.jsdelivr.net/gh/mathih13/NotificationQueue@1.2.1/notifyQueue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mathih13/NotificationQueue@1.2.5/notifyQueue.min.js"></script>
 ```
+
+### Stylesheet
+By default a basic stylesheet will be downloaded for general styles such as placement and size, etc. Look below under the Usage section if you wish to override the basic stylesheet. 
+
 ### Material Icons
 To use the material icon import the font from google:
 ```html
@@ -29,12 +34,13 @@ To begin using NotificationQueue, simply start a new queue by using the JavaScri
 ```javascript
 let queue = new NotifyQueue();
 ```
-By default, only some default styling is applied to the notification boxes. If you wish to load with [Materialize CSS](https://materializecss.com/), simply add the argument materialUI: true to your constructor.
 
+### Stylesheet Override
+By default, only some default styling is applied to the notification boxes. If you wish to load the queue with your own styles, simply override the url to the stylesheet when initializing the NotifyQueue object:
 ```javascript
-let queue = new NotifyQueue({ materialUI: true });
+let queue = new NotifyQueue({ styleSheet: 'myStyles.css' });
 ```
-*Note: In some cases, this could apply materialize CSS to your entire page. If you are in doubt, do not apply this option.*
+*You may look at the css file in this project to see class names and IDs used in the HTML*
 
 ### Creating Notifications
 Once the queue is set up it is possible to add notifications to it. A notification is created by calling NotifyQueue's function *notify*, and supplying options in its parameter object.
