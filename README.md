@@ -40,7 +40,7 @@ By default, only some default styling is applied to the notification boxes. If y
 ```javascript
 let queue = new NotifyQueue({ styleSheet: 'myStyles.css' });
 ```
-*You may look at the css file in this project to see class names and IDs used in the HTML*
+*You may look at the example.css file in this project to see class names and IDs used in the HTML*
 
 ### Creating Notifications
 Once the queue is set up it is possible to add notifications to it. A notification is created by calling NotifyQueue's function *notify*, and supplying options in its parameter object.
