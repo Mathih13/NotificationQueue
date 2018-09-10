@@ -3,6 +3,7 @@ container.id = 'snackbarContainer';
 document.body.appendChild(container);
 let maxConcurrency = 3;
 
+/* IE11 Support Yay */
 if (!Object.assign) {
   Object.defineProperty(Object, 'assign', {
     enumerable: false,
@@ -186,8 +187,6 @@ const NotifyQueue = function (args) {
 
 }
 
-
-
 window.NotifyQueue = NotifyQueue;
 
 function appendCss(url) {
@@ -200,6 +199,7 @@ function appendCss(url) {
   head.appendChild(link);
 }
 
+/* Again, IE11 supported ajax instead of fetch API */
 function getAjax(url, success) {
   var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
   xhr.open('GET', url);
