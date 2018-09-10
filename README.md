@@ -14,7 +14,7 @@ To install the plugin simply download notifyQueue.js and standard.css, and refer
 ```
 Or through cdn:
 ```html
-<script src="https://cdn.jsdelivr.net/gh/mathih13/NotificationQueue@1.2.5/notifyQueue.min.js"></script>
+<script src="https://notificationqueue-fdknzvrohz.now.sh/notifyQueue.js"></script>
 ```
 
 ### Stylesheet
