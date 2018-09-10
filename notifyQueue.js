@@ -2,7 +2,7 @@
 container.id = 'snackbarContainer';
 document.body.appendChild(container);
 const maxConcurrency = 3;
-appendCss('standard.css');
+appendCss('https://firebasestorage.googleapis.com/v0/b/mathih13-notification-queue.appspot.com/o/notifyQueue.css?alt=media&token=d32dc9e4-84fb-4675-a5b4-f3310883e9ce');
 
 
 const styleDefaults = {
