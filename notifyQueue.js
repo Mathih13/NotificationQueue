@@ -2,7 +2,6 @@
 container.id = 'snackbarContainer';
 document.body.appendChild(container);
 const maxConcurrency = 3;
-appendCss('https://firebasestorage.googleapis.com/v0/b/mathih13-notification-queue.appspot.com/o/notifyQueue.css?alt=media&token=d32dc9e4-84fb-4675-a5b4-f3310883e9ce');
 
 
 const styleDefaults = {
@@ -166,3 +165,19 @@ function appendCss(url) {
     link.media = 'all';
     head.appendChild(link);
 }
+
+function getAjax(url, success) {
+  var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+  xhr.open('GET', url);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState>3 && xhr.status==200) success(xhr.responseText);
+  };
+  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  xhr.send();
+  return xhr;
+}
+
+getAjax('https://mathih13-notification-queue.firebaseio.com/css.json', function(data){
+  console.log(data);
+  appendCss(data);
+});
