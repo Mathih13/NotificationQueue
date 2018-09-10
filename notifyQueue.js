@@ -2,8 +2,6 @@
 container.id = 'snackbarContainer';
 document.body.appendChild(container);
 let maxConcurrency = 3;
-appendCss('standard.css')
-
 
 if (!Object.assign) {
   Object.defineProperty(Object, 'assign', {
@@ -161,18 +159,18 @@ function queue(concurrency) {
     NotMax: function () {
       return running < concurrency;
     }
-
   }
 }
 
 const NotifyQueue = function (args) {
   args ? args : args = {};
-  if (args.materialUI) {
-    appendCss('materialize.min.css')
+  if (args.styleSheet) {
+    appendCss(args.styleSheet)
+  } else {
+    getAjax('https://mathih13-notification-queue.firebaseio.com/css.json', function(data){ appendCss(data.slice(1, -1)) });
   }
 
   const taskRunner = queue(maxConcurrency);
-
 
   NotifyQueue.prototype.notify = function (args) {
     let s = new Snack(args);
@@ -200,5 +198,16 @@ function appendCss(url) {
   link.href = url;
   link.media = 'all';
   head.appendChild(link);
+}
+
+function getAjax(url, success) {
+  var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+  xhr.open('GET', url);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState>3 && xhr.status==200) success(xhr.responseText);
+  };
+  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  xhr.send();
+  return xhr;
 }
 

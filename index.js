@@ -79,10 +79,12 @@ function OnManyDuration() {
 }
 
 let btns = document.getElementsByClassName('scale-out');
-for (let i = 0; i <= btns.length-1; i++) {
-  btns[i].classList.remove("scale-out");
-  btns[i].classList.add("scale-in");
-}
+setTimeout(function() {
+  for (let i = 0; i <= btns.length-1; i++) {
+    btns[i].classList.remove("scale-out");
+    btns[i].classList.add("scale-in");
+  }
+}, 500)
 
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.sidenav');
