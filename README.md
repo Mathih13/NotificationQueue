@@ -18,7 +18,7 @@ Or through cdn:
 ```
 
 ### Stylesheet
-By default a basic stylesheet will be downloaded for general styles such as placement and size, etc. Look below under the Usage section if you wish to override the basic stylesheet. 
+By default a basic stylesheet will be downloaded for general styles such as placement and size, etc. Look below under the [Usage](https://github.com/Mathih13/NotificationQueue#stylesheet-override) section if you wish to override the basic stylesheet. 
 
 ### Material Icons
 To use the material icon import the font from google:
