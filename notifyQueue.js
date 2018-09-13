@@ -168,7 +168,7 @@ const NotifyQueue = function (args) {
   if (args.styleSheet) {
     appendCss(args.styleSheet)
   } else {
-    getAjax('https://mathih13-notification-queue.firebaseio.com/css.json', function(data){ appendCss(data.slice(1, -1)) });
+  appendCss('https://notificationqueue.now.sh/css')
   }
 
   const taskRunner = queue(maxConcurrency);
@@ -197,16 +197,4 @@ function appendCss(url) {
   link.href = url;
   link.media = 'all';
   head.appendChild(link);
-}
-
-/* Again, IE11 supported ajax instead of fetch API */
-function getAjax(url, success) {
-  var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-  xhr.open('GET', url);
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState>3 && xhr.status==200) success(xhr.responseText);
-  };
-  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-  xhr.send();
-  return xhr;
 }
