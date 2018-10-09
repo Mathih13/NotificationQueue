@@ -72,6 +72,8 @@ let options = {
 	        textColor: '#fff', // Color of the text
 		buttonBackgroundColor: 'red', // The background color of the action button		
 	},
+	hideIcon: false, // Hide the material icon. By default this is false
+	iconName: 'announcement', // Override what icon is shown
 	actionText: 'Click me!', // The action buttons text
 	message: 'Your order has been received.', // The html to be displayed inside the notification
 	duration: 3500, // The duration to show the notification. Leave this blank for indefinite
